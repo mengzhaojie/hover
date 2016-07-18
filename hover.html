@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.wrap{
+		width: 1205px;
+		height:250px;
+		margin:50px auto;
+		border:1px solid #ccc;
+		border-top:2px solid green;
+	}
+	.wrap .item{
+		width:200px;
+		height:250px;
+		position: relative;
+		float:left;
+		border-right:1px solid #ccc;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.wrap .item:last-child{
+		border-right:none;
+	}
+	.wrap .item h2,.wrap .item p{
+		padding:0 10px;
+		font-family: "微软雅黑";
+		font-weight:100;
+	}
+	.wrap .item h2{
+		font-size: 16px;
+	}
+	.wrap .item p{
+		font-size:14px;
+	}
+	.wrap .item img{
+		position: absolute;
+		bottom: 0;
+		left:0;
+	}
+	.wrap .item .mask{
+		width: 200px;
+		height: 250px;
+		position: absolute;
+		left:0;
+		bottom:-250px;
+		background: green;
+		transtion:bottom .5s;
+		-webkit-transtion:bottom .5s;
+	}
+	.wrap .item .mask h2,.wrap .item .mask p{
+		color: #fff;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<div class="item">
+			<h2>李连杰</h2>
+			<p>世界功夫巨星</p>
+			<img src="img/1.png" alt="">
+			<div class="mask">
+				<h2>李连杰</h2>
+				<p>世界功夫巨星，主演电影的有《功夫之王》，在中国和世界享有盛誉</p>
+			</div>
+		</div>
+		<div class="item">
+			<h2>李连杰</h2>
+			<p>世界功夫巨星</p>
+			<img src="img/2.png" alt="">
+			<div class="mask">
+				<h2>李连杰</h2>
+				<p>世界功夫巨星</p>
+			</div>
+		</div>
+		<div class="item">
+			<h2>李连杰</h2>
+			<p>世界功夫巨星</p>
+			<img src="img/3.png" alt="">
+			<div class="mask">
+				<h2>李连杰</h2>
+				<p>世界功夫巨星，主演电影的有《功夫之王》，在中国和世界享有盛誉</p>
+			</div>
+		</div>
+		<div class="item">
+			<h2>李连杰</h2>
+			<p>世界功夫巨星</p>
+			<img src="img/4.png" alt="">
+			<div class="mask">
+				<h2>李连杰</h2>
+				<p>世界功夫巨星</p>
+			</div>
+		</div>
+		<div class="item">
+			<h2>李连杰</h2>
+			<p>世界功夫巨星</p>
+			<img src="img/5.png" alt="">
+			<div class="mask">
+				<h2>李连杰</h2>
+				<p>世界功夫巨星，主演电影的有《功夫之王》，在中国和世界享有盛誉</p>
+			</div>
+		</div>
+		<div class="item">
+			<h2>李连杰</h2>
+			<p>世界功夫巨星</p>
+			<img src="img/6.png" alt="">
+			<div class="mask">
+				<h2>李连杰</h2>
+				<p>世界功夫巨星</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src='jquery.js'></script>
+<script>
+	$('.wrap').on('mouseenter','.item',function(){
+		$(this).find('.mask').stop().animate({bottom:'0'})
+	}).on('mouseleave','.item',function(){
+		$(this).find('.mask').stop().animate({bottom:'-250'})
+	})
+</script>
